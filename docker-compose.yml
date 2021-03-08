@@ -1,0 +1,15 @@
+version: '3'
+volumes:
+  risk-data:
+services:
+  db_ra:
+    image: mysql:5.7
+    restart: always
+    container_name: mysql-ra
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ra_db
+      MYSQL_USER: ra_user
+      MYSQL_PASSWORD: ra_pwd
+    ports:
+      - "3350:3306"
